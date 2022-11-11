@@ -13,14 +13,14 @@ function NavigationBar() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Link to="/">Página inicial</Link>
-                        <Link className="mx-3" to="/sobre">Sobre o site</Link>
-                        <Link to="/receitas">Ver receitas</Link>
+                        <Link className="nav-link" to="/">Página inicial</Link>
+                        <Link className="nav-link" to="/sobre">Sobre o site</Link>
+                        <Link className="nav-link" to="/receitas">Ver receitas</Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
                             type="search"
-                            placeholder="Search"
+                            placeholder="Buscar receitas"
                             className="me-2"
                             aria-label="Search"
                         />
