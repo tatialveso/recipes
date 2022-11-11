@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 
 function RecipeCard({ recipe, deleteRecipe }) {
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem', marginBottom: '30px' }}>
             <Card.Header>
-                <Link to={`/receitas/${recipe.name}`}>
+                <Link className="nav-link" to={`/receitas/${recipe.name}`}>
                     {recipe.name}
                 </Link>
             </Card.Header>
             <Card.Body>
-                <Card.Img variant="top" src={recipe.image} />
-                <Card.Text>Porções: {recipe.servings}</Card.Text>
-                <Card.Text>Dificuldade: {recipe.level}</Card.Text>
+                <Card.Img src={recipe.image} />
+                <div className='d-flex justify-content-around mt-3'>
+                    <Card.Text>Porções: {recipe.servings}</Card.Text>
+                    <Card.Text>Dificuldade: {recipe.level}</Card.Text>
+                </div>
                 <Button variant="danger" onClick={() => deleteRecipe(recipe.name)}>Excluir a refeição</Button>
             </Card.Body>
         </Card>
