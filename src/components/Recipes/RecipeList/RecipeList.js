@@ -5,14 +5,6 @@ import AddRecipe from '../AddRecipe/AddRecipe';
 import { Navigate } from "react-router-dom";
 
 function RecipeList({ recipes, setRecipes }) {
-    const [isLogged, setIsLogged] = useState(true)
-
-    if(!isLogged) {
-        // Navigate é usado quando vamos redirecionar
-        // Link é usado quando clicamos em botão ou em um link (ação feita pelo usuário)
-        return <Navigate to="/erro" />
-    }
-
     const deleteRecipe = (recipeKey) => {
         const newRecipes = recipes.filter((recipe) => {
             return recipe.name !== recipeKey
