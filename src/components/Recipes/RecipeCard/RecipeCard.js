@@ -13,7 +13,7 @@ function RecipeCard({ recipe, deleteRecipe }) {
                 <Card.Img src={recipe.image} />
                 <div className='d-flex justify-content-around mt-3'>
                     <Card.Text>Porções: {recipe.servings}</Card.Text>
-                    <Card.Text>Dificuldade: {recipe.level}</Card.Text>
+                    <Card.Text>Dificuldade: {recipe.level}/3</Card.Text>
                 </div>
                 <Button variant="danger" onClick={() => deleteRecipe(recipe.name)}>Excluir a refeição</Button>
             </Card.Body>

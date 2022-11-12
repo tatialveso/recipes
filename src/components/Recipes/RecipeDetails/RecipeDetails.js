@@ -18,7 +18,7 @@ function RecipeDetails({ recipes }) {
                 </Col>
                 <Col className="text-start">
                     <p><b>Porções:</b> {foundRecipe.servings}</p>
-                    <p><b>Dificuldade:</b> {foundRecipe.level}</p>
+                    <p><b>Dificuldade:</b> {foundRecipe.level}/3</p>
                     <p><b>Modo de preparo:</b> {foundRecipe.preparation}</p>
                     <Button variant="light" className="mt-5 fw-bold" onClick={() => navigate(-1)}>Voltar</Button>
                 </Col>
