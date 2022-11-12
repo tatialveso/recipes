@@ -1,23 +1,29 @@
-import { Card } from "react-bootstrap"
-import { useParams } from "react-router-dom"
+import { Button, Col, Container, Image, Row } from "react-bootstrap"
+import { useNavigate, useParams } from "react-router-dom"
 
 function RecipeDetails({ recipes }) {
     const { receitaId } = useParams()
+    const navigate = useNavigate()
 
     const foundRecipe = recipes.find((oneRecipe) => {
         return oneRecipe.name === receitaId;
     })
 
     return (
-        <Card style={{ width: '90%', margin: 'auto' }}>
-            <Card.Header>{ foundRecipe.name }</Card.Header>
-            <Card.Body>
-                <Card.Img variant="top" src={foundRecipe.image} />
-                <Card.Text>Porções: {foundRecipe.servings}</Card.Text>
-                <Card.Text>Dificuldade: {foundRecipe.level}</Card.Text>
-                <Card.Text>Modo de preparo: {foundRecipe.preparation}</Card.Text>
-            </Card.Body>
-        </Card>
+        <Container>
+            <h1 className="my-5">{foundRecipe.name}</h1>
+            <Row className="align-items-center">
+                <Col>
+                    <Image className="w-100 rounded" src={foundRecipe.image} />
+                </Col>
+                <Col className="text-start">
+                    <p><b>Porções:</b> {foundRecipe.servings}</p>
+                    <p><b>Dificuldade:</b> {foundRecipe.level}</p>
+                    <p><b>Modo de preparo:</b> {foundRecipe.preparation}</p>
+                    <Button variant="light" className="mt-5 fw-bold" onClick={() => navigate(-1)}>Voltar</Button>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
