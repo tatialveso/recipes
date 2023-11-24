@@ -28,4 +28,4 @@ npm start
 Para fazer suas próprias alterações, não se esqueça de antes forkar o repositório e fazer o clone a partir do repositório criado pelo fork.
 
 ## :dart: Status do projeto
-O projeto está finalizado por ora.
+O projeto está finalizado.
